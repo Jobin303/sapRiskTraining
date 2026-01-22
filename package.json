@@ -1,0 +1,43 @@
+{
+  "name": "RiskManagement",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "private": true,
+
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@cap-js/hana": "^2",
+    "express": "^4"
+  },
+
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/dev-cap-tools": "^1.31.0"
+  },
+
+  "scripts": {
+    "start": "cds-serve",
+    "watch": "cds watch"
+  },
+
+  "cds": {
+    "requires": {
+      "auth": {
+        "[development]": {
+          "kind": "dummy"
+        },
+        "[production]": {
+          "kind": "xsuaa"
+        }
+      },
+
+      "BusinessPartnerA2X": {
+        "kind": "odata-v2",
+        "model": "srv/external/BusinessPartnerA2X",
+        "credentials": {
+          "destination": "BusinessPartnerA2X"
+        }
+      }
+    }
+  }
+}
