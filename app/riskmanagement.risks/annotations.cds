@@ -8,6 +8,7 @@ annotate service.Risks with @(
                 Label : 'title',
                 Value : title,
             },
+            
             {
                 $Type : 'UI.DataField',
                 Label : 'prio',
